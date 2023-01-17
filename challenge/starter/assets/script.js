@@ -32,4 +32,24 @@ const questions = [
   let score = 0;
   let timeLeft = 60;
   let timerId;
+
+  const startButton = document.getElementById("start");
+  startButton.addEventListener("click", startQuiz);
+
+  function startQuiz() {
+    document.getElementById("start-screen").classList.add("hide");
+    document.getElementById("questions").classList.remove("hide");
+    timerId = setInterval(countdown, 1000);
+    showQuestion();
+  }
+
+  function countdown() {
+    if (timeLeft === 0) {
+      clearInterval(timerId);
+      endQuiz();
+    } else {
+      timeLeft--;
+      document.getElementById("time").textContent = timeLeft;
+    }
+  }
   
