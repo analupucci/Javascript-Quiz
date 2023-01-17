@@ -52,4 +52,39 @@ const questions = [
       document.getElementById("time").textContent = timeLeft;
     }
   }
+
+  function showQuestion() {
+    if (currentQuestion === questions.length) {
+      endQuiz();
+      return;
+    }
+  
+    const question = questions[currentQuestion];
+    document.getElementById("question-title").textContent = question.question;
+    const choices = document.getElementById("choices");
+    choices.innerHTML = "";
+  
+    for (const key in question.answers) {
+      const answerButton = document.createElement("button");
+      answerButton.textContent = question.answers[key];
+      answerButton.classList.add("choice");
+      answerButton.setAttribute("value", key);
+      answerButton.addEventListener("click", selectAnswer);
+      choices.appendChild(answerButton);
+    }
+  }
+
+  function selectAnswer(event) {
+    const selectedAnswer = event.target.value;
+    if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+      score++;
+    } else {
+      timeLeft -= 10;
+    }
+    currentQuestion++;
+    showQuestion();
+  }
+
+  
+  
   
