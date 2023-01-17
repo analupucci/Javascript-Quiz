@@ -12,15 +12,15 @@ When the game ends, the score will display and will give the player the ability 
 
 ## Screenshots
 
-![Image](challenge/assets/Screenshot%202023-01-17%20at%2022.19.17.png)
+![Image](assets/Screenshot%202023-01-17%20at%2022.19.17.png)
 
-![Image](challenge/assets/Screenshot%202023-01-17%20at%2022.19.26.png)
+![Image](assets/Screenshot%202023-01-17%20at%2022.19.26.png)
 
-![Image](challenge/assets/Screenshot%202023-01-17%20at%2022.19.35.png)
+![Image](assets/Screenshot%202023-01-17%20at%2022.19.35.png)
 
 
 
 ## Deployed link
 
-https://analupucci.github.io/Javascript-Quiz-/
+https://analupucci.github.io/Javascript-Quiz/
   
