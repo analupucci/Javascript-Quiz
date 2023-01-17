@@ -1,3 +1,5 @@
+// Quiz questions and answers
+
 const questions = [
     {
       question: "What is the difference between let and var in JavaScript?",
@@ -33,16 +35,19 @@ const questions = [
   let timeLeft = 60;
   let timerId;
 
+  // Start button
   const startButton = document.getElementById("start");
   startButton.addEventListener("click", startQuiz);
-
+  
+  // Start quiz function
   function startQuiz() {
     document.getElementById("start-screen").classList.add("hide");
     document.getElementById("questions").classList.remove("hide");
     timerId = setInterval(countdown, 1000);
     showQuestion();
   }
-
+  
+  // Timer function
   function countdown() {
     if (timeLeft === 0) {
       clearInterval(timerId);
@@ -52,7 +57,8 @@ const questions = [
       document.getElementById("time").textContent = timeLeft;
     }
   }
-
+  
+  // Show question function
   function showQuestion() {
     if (currentQuestion === questions.length) {
       endQuiz();
@@ -73,7 +79,8 @@ const questions = [
       choices.appendChild(answerButton);
     }
   }
-
+  
+  // Select answer function
   function selectAnswer(event) {
     const selectedAnswer = event.target.value;
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
@@ -84,14 +91,16 @@ const questions = [
     currentQuestion++;
     showQuestion();
   }
-
+  
+  // End quiz function
   function endQuiz() {
     clearInterval(timerId);
     document.getElementById("questions").classList.add("hide");
     document.getElementById("end-screen").classList.remove("hide");
     document.getElementById("final-score").textContent = score;
   }
-
+  
+  // Submit initials function
   const submitButton = document.getElementById
 
   
